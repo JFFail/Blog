@@ -1,0 +1,13 @@
+# Site settings
+title: MADS Ninja
+email: john@mads.ninja
+description: > # this means to ignore newlines until "baseurl:"
+  Random musings and ramblings of a geek and sysadmin.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://mads.ninja" # the base hostname & protocol for your site
+twitter_username: ConsoleAccess
+github_username: JFFail
+destination: /var/www/mads.ninja/public_html
+
+# Build settings
+markdown: kramdown
