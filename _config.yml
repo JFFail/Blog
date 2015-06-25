@@ -8,6 +8,7 @@ url: "http://mads.ninja" # the base hostname & protocol for your site
 twitter_username: ConsoleAccess
 github_username: JFFail
 destination: /var/www/mads.ninja/public_html
+paginate: 10
 
 # Build settings
 markdown: kramdown
