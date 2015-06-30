@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "Blogging Options"
+date:   2015-06-27 09:45:36
+categories: blogging software platforms
+---
+Lately I've been playing a *lot* of blog roulette, hopping between different platforms and hosts in relatively rapid succession. I figured that I would do a write-up of my recent adventures into different blogging software and my thoughts on each of them.
+
+##Hosted WordPress
+
+My blog for forever and a day was my [failicide][failicide] hosted WordPress.com blog. My archive there goes back to spring of 2011, and my last legitimate post there was spring of 2015. Even as I write this it's hard for me to believe that I was active there for almost exactly 4 years. Hosted WordPress is honestly a *great* option for anyone looking to get into blogging. The setup couldn't have been easier, you get tons of themes to choose from, plenty of storage space, and your blog seems to manage to get good exposure; even without regular updates that particular site still sees 100+ unique hits each day. Plus you get to use easily the most popular CMS on Earth without worry about patching it.
+
+The downside for me was that I was a bit tired of there being ads on my blog posts and my limited control over my content (e.g. I couldn't really do my own backups unless I wanted to export my blog on a semi-regular basis, which in itself wouldn't include the media and is only easily importable into another WordPress instance.) I also wanted to start using my own domain, and I wasn't exactly excited about the prospect of paying WordPress for that right. I definitely don't blame Automattic for charging for that particular service, but it just wasn't for me. My inner geek said that if I was going to head in this route I could do better.
+
+##Blogger
+
+I tried out Blogger because it was essentially offering up the same stuff as WordPress without charging me for it. I'll be honest that Blogger seems to be kind of the ostracized, outcast member of the Google family. Before switching to WordPress in early 2011, my blogging was mostly done at Blogger. Needless to say, I was a bit disappointed that over 4 years later pretty much everything is *exactly the same*. While I don't necessarily know if I'd be worried about Google killing Blogger off considering how many people use it (including Google, which hosts the blogs for most of their different products there), it's still a bit disconcerting how little love it seems to get.
+
+Overall, the UI for Blogger just doesn't seem particularly strong; it's like writing posts on WordPress 6 or 7 years ago. Image options are just kind of wonky, and it's hard to get your post layout just the way you want in the WYSIWYG because spacing and CRLFs are just kind of odd. It wasn't uncommon for me to publish posts and then immediately edit them to fix spacing issues.
+
+Blogger's themes are vastly more limited than those offered up by WordPress, though customizing them is easy. The problme is that customizing them seems to add a lot of overhead to the CSS. For example, I picked a nice-looking serif font for my posts and titles. When looking at my blog afterward, it would usually load with the default sans-serif font for a second or two first before the CSS for my custom font would load and actually kick in. It just seemed sloppy considering that I've leveraged [Google Fonts][fonts] before without any issues on load-times when done intelligently.
+
+Similar to WordPress, backing up Blogger wasn't the most streamlined thing. I could export it, but again I'm limited to what I can actually do with that export beyond re-importing it into another Blogger instance. I had attempted to import an export of my WordPress blog into Blogger, but that was met with horrible failure. With all of these hiccups in mind, I decided to move on.
+
+##Raw HTML and CSS
+
+For a brief time, I thought about doing my own site that I maintained just through raw HTML files. I was actually able to come up with some decent designs based on [Bootstrap][bootstrap]. The good part is that I was in *complete* control of my environment. It required almost no resources, and it was simple enough to gather up the contents of my site into a tarball to back it up. Additionally, since it was running on my shared hosting space I was able to spin up an SSL cert for it, though I couldn't find a way to *force* HTTPS.
+
+Maintaining it was a beast, though, and it quickly became apparent that it wasn't a viable solution. With no CMS, I was manually keeping a huge page of links; I could only imagine what that would look like a few years down the road. Additionally, each time I noticed a bug in my HTML or wanted to make a change to the layout beyond the CSS I needed to touch **every... freaking... page**. While I was able to use some CLI-fu with `sed` to avoid opening each of them in Vim, it still became unbearable pretty quickly. It was clear that a CMS was something I'd need.
+
+##Ghost
+
+I had acquired a bit of hosting space from my registrar for the aforementioned HTML-based blog, so I decided that I'd try running my own blog software on it. I had seen [Scott Hanselman][hanselman] blog about a Node.js blogging platform called [Ghost][ghost]. My shared hosting service actually had [Softaculous][softaculous] available, and Ghost was one of the packages it included. I quickly decided to give it a try. Unfortunately, I never got the automated installation to work. It kept erroring out, which was a bit frustrating since all I was doing was clicking an "Install" button.
+
+I looked into the error logs generated, and after doing a bit of research it seemed that the errors were related to running out of resources during the installation. This wasn't particularly surprising since I was getting essentially the lowest tier of service available from my host; I don't anticipate my blogs to be *that* popular. Installing Ghost and the necessary MySQL back-end seemed to be a bit overkill for my service. Rather than pay to upgrade my shared space, I decided to just move on.
+
+##Nibbleblog
+
+Also available in Softaculous was [Nibbleblog][nibbleblog]. This drew my attention because it was based around storing data in XML files and pulling out the necessary pieces through PHP, thus eliminating the need for a DBMS back-end. It installed smoothly enough on my shared space, and I spent about a month using it. Softaculous allowed me to schedule a weekly backup compressing my whole blog into a tarball that I could then pull off via SFTP onto external storage. Again I could continue to leverage my previously mentioned SSL certificate, but I still couldn't force HTTPS.
+
+There weren't really many customizations availabe for Nibbleblog without delving more into the code than I'd like for a CMS. You only could choose from a handful of themes, and none of them were responsive. This meant that my blog looked kind of gross when viewing on a phone or tablet which was a big caveat for me. I was able to install a few plugins for things like pretty URLs - my default it wanted to use a heinous-looking GUID - and add a page for an "About Me" type section but that was about it for my customization.
+
+On the whole, I just didn't feel particularly satisfied with Nibbleblog. While I had a bit more of the control than I got with solutions like hosted WordPress or Blogger, I was getting the same type of antiquated UI and feel. Plus when authoring posts from my Chromebooks I ran into some bugs in the WYSIWYG, such as any media being inserted into the very top of the post. Once again, I decided to move on.
+
+##Jekyll On Shared Hosting
+
+I had been interested in [Jekyll][jekyll] for some time after learning that it was the means by which people were hosting blogs off of GitHub. I was really drawn to the fact that it allowed me to write posts in Markdown, which I love, and then parse those into static HTML pages. It gives you a pretty slick theme to begin with, but then you have the power to customize literally any aspect of it that you want. With the templating system it uses, it's easy to change just one file and modify each page on your blog. Plus it's extremely easy to just commit any blog changes to GitHub for a backup.
+
+The downside for me was that my hosting service, being as basic as it was, didn't afford me the opportunity to SSH in, install software, etc. Likewise, I didn't want to just install Jekyll on one of my personal computers because that would eliminate my ability to blog from any of my laptops, netbooks, or Chromebooks, which is very important to me. To solve that problem I spun up a Debian VPS at [Vultr][vultr] and installed Jekyll on that since I can SSH to it from anything. After authoring a post, I figured I would just FTP the site over to my shared hosting.
+
+At first I didn't think this would be a big deal since I could use some more CLI-fu to only copy over new files. The issue was that when running `jekyll build` it seemed to touch *every* file. So each time I posted, I was copying more and more data over to my shared hosting service. It just seemed clunky, and again I was worried about how much data, images, etc. I'd be copying over to that host after each post a few years down the road.
+
+##Jekyll On My VPS
+
+That's when I opted to instead forget my shared hosting and host the site straight from my VPS. Vultr gives some pretty awesome service for just $5 USD a month, including 1 TB of bandwidth that I figured would be significantly more than I needed. As I had mentioned in [another post][post], I opted to not use `jekyll serve` to have Jekyll host itself. Instead I went with Nginx, and simply specified the folder where my Nginx site was hosted out of for Jekyll's destination when running `jekyll build`.
+
+I really feel that this solution is giving me the best of everything. I get to write posts in Markdown out of Vim, the editor I feel the most efficient with by far. I completely control *everything*, and I can customize my blog as much or as little as I want. Backups are insanely easy since I just push the changes to GitHub after each post. Should anything happen to my VPS, I could spin up another, clone my GitHub repository, and start publishing it again. I don't have to worry about copying files anywhere since I'm just working off of the same server for everything. And since I completely control that server, I can leverage HTTPS and tell Nginx to redirect HTTP requests to HTTPS with a 301.
+
+It took a lot of work, and I'm a bit sad that a few posts I made at each of the doomed blogging platforms are now lost to the ether of the Internet since I didn't bother re-capturing all of that data each time I switched. In the end, though, I feel like it was well worth it to finally find a setup with which I'm very happy.
+
+[failicide]: https://failicide.wordpress.com/
+[fonts]: https://www.google.com/fonts
+[hanselman]: http://www.hanselman.com/blog/HowToInstallTheNodejsGhostBloggingSoftwareOnAzureWebsites.aspx
+[ghost]: https://ghost.org/
+[softaculous]: http://www.softaculous.com/softaculous/
+[nibbleblog]: http://www.nibbleblog.com/
+[bootstrap]: http://getbootstrap.com/
+[jekyll]: http://jekyllrb.com/
+[vultr]: https://www.vultr.com/
+[post]: https://mads.ninja/nginx/server/ssl/https/2015/06/25/nginx-config.html
