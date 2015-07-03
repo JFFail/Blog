@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+![computer desk](/images/comp_mod.jpg)
 
 My name is John. I work on the Messaging And Directory Services (MADS) team. I'm a full-time computer nerd working as a sysadmin. In the office I'm mainly involved in Windows-centric administration managing Active Directory, DNS, and DHCP. I also adminster Office 365 and work closely with SSO for SaaS applications back to Azure AD. Then I mess around a little bit with SaaS applications like Google Apps.
 

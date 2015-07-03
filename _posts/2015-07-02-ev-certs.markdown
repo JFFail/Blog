@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "EV Certs - Too Rich For Me"
+date:   2015-07-02 21:55:00
+categories: jekyll update
+---
+Since standing up this blog, one of my earlier priorities was to [get an SSL certificate][ssl] so I could leverage (and force) HTTPS. It's not as though my site actually has anything which would *need* to be encrypted, but I think it's a good practice. I was able to procure a certificate through my registrar, and it was honestly *very* cheap at only $10 USD. The downside of such a certificate, of course, is that it's not nearly as effective from a consumer trust standpoint. It's the type of certificate that a Certificate Authority will give to just about anyone. All I had to do was generate a CSR from my server and fork over ten bucks; literally *anyone* can do that.
+
+The tradeoff is that most browsers won't make much of a deal out of it. Chrome honestly does it the most justice by at least making the lock icon in the address bar green:
+
+![Chrome lock icon](/images/2015/chrome_lock.png)
+
+When looking at the same icon in Firefox or even Internet Explorer it shows up as a bland, gray icon. While the lock is still there, it doesn't have a nice green glow indicating that things should be considered safe. For most browsers, if I want that kind of feedback for users I'd need an [Extended Validation][ev] or EV certificate. While it's functionally the same as my cheaper certificate from a technical perspective, the difference is the process used before handing it out. While my certificate required very little in the way of information about me, an EV certificate has a more rigorous process surrounding it. I figured I may be willing to go through that process just to give my site an even more professional look, so I decided to check what an EV certificate would run me from the same provider from which I got my current cert:
+
+![Comodo EV cert price](/images/2015/comodo_ev_cert.png)
+
+Suffice to say, one look at the price *immediately* killed any plans of mine for procuring an EV cert. While I like the idea of allowing/forcing an encrypted connection to my site for no better reason than "Why not? Everyone should do it.", I'm not quite concerned enough with giving everyone a pretty, green URL bar that I'm willing to spend that kind of money on the endeavor. $10 USD a year for a certificate is perfectly reasonable. Paying $135 USD extra just to make the address bar green is a bit too much for me, though. I'll be sticking with my existing certificate for the foreseeable future unless I randomly start doing e-commerce on my blog or something similarly insane.
+
+[ssl]:  https://mads.ninja/nginx/server/ssl/https/2015/06/25/nginx-config.html
+[ev]:   https://en.wikipedia.org/wiki/Extended_Validation_Certificate
