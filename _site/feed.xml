@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>John Fabry</title>
+    <description>Random musings and ramblings of a geek and sysadmin.
+</description>
+    <link>https://johnfabry.azurewebsites.net/</link>
+    <atom:link href="https://johnfabry.azurewebsites.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 05 Aug 2015 13:29:04 -0400</pubDate>
+    <lastBuildDate>Wed, 05 Aug 2015 13:29:04 -0400</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>EV Certs - Too Rich For Me</title>
+        <description>&lt;p&gt;Since standing up this blog, one of my earlier priorities was to &lt;a href=&quot;https://mads.ninja/nginx/server/ssl/https/2015/06/25/nginx-config.html&quot;&gt;get an SSL certificate&lt;/a&gt; so I could leverage (and force) HTTPS. It’s not as though my site actually has anything which would &lt;em&gt;need&lt;/em&gt; to be encrypted, but I think it’s a good practice. I was able to procure a certificate through my registrar, and it was honestly &lt;em&gt;very&lt;/em&gt; cheap at only $10 USD. The downside of such a certificate, of course, is that it’s not nearly as effective from a consumer trust standpoint. It’s the type of certificate that a Certificate Authority will give to just about anyone. All I had to do was generate a CSR from my server and fork over ten bucks; literally &lt;em&gt;anyone&lt;/em&gt; can do that.&lt;/p&gt;
+
+&lt;p&gt;The tradeoff is that most browsers won’t make much of a deal out of it. Chrome honestly does it the most justice by at least making the lock icon in the address bar green:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015/chrome_lock.png&quot; alt=&quot;Chrome lock icon&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When looking at the same icon in Firefox or even Internet Explorer it shows up as a bland, gray icon. While the lock is still there, it doesn’t have a nice green glow indicating that things should be considered safe. For most browsers, if I want that kind of feedback for users I’d need an &lt;a href=&quot;https://en.wikipedia.org/wiki/Extended_Validation_Certificate&quot;&gt;Extended Validation&lt;/a&gt; or EV certificate. While it’s functionally the same as my cheaper certificate from a technical perspective, the difference is the process used before handing it out. While my certificate required very little in the way of information about me, an EV certificate has a more rigorous process surrounding it. I figured I may be willing to go through that process just to give my site an even more professional look, so I decided to check what an EV certificate would run me from the same provider from which I got my current cert:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015/comodo_ev_cert.png&quot; alt=&quot;Comodo EV cert price&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Suffice to say, one look at the price &lt;em&gt;immediately&lt;/em&gt; killed any plans of mine for procuring an EV cert. While I like the idea of allowing/forcing an encrypted connection to my site for no better reason than “Why not? Everyone should do it.”, I’m not quite concerned enough with giving everyone a pretty, green URL bar that I’m willing to spend that kind of money on the endeavor. $10 USD a year for a certificate is perfectly reasonable. Paying $135 USD extra just to make the address bar green is a bit too much for me, though. I’ll be sticking with my existing certificate for the foreseeable future unless I randomly start doing e-commerce on my blog or something similarly insane.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 02 Jul 2015 17:55:00 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/jekyll/update/2015/07/02/ev-certs.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/jekyll/update/2015/07/02/ev-certs.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Android Turbo SFTP Client</title>
+        <description>&lt;p&gt;Since I &lt;a href=&quot;https://mads.ninja/blogging/software/platforms/2015/06/27/blogging.html&quot;&gt;switched to this Jekyll blog&lt;/a&gt;, one of my hiccups was how to get the files I needed over to my web server. In most instances it’s &lt;em&gt;super&lt;/em&gt; easy. If there’s an image I need that I already have publicly available on the Internet somewhere, for example, I can simply connect in via SSH and &lt;code&gt;wget&lt;/code&gt; it. Failing that, from my Windows laptop I can leverage &lt;a href=&quot;http://winscp.net/eng/download.php&quot;&gt;WinSCP&lt;/a&gt;. If I’m on a Chromebook, I can use pretty much any web IDE like &lt;a href=&quot;https://codeanywhere.com/&quot;&gt;Codeanywhere&lt;/a&gt; or &lt;a href=&quot;https://c9.io/&quot;&gt;Cloud9&lt;/a&gt; to gain SFTP access. Admittedly, those scenarios make up the overwhelming majority of the instances where I’m looking to move content onto my web server. However, there are still outliers, and my phone is a big one.&lt;/p&gt;
+
+&lt;p&gt;In some instances I may need to take a photo - or more likely a &lt;a href=&quot;https://mads.ninja/google/play/music/radio/2015/06/29/play-music.html&quot;&gt;screenshot&lt;/a&gt; - and get it over to my server. Obviously I can get it into a place where it’s accessible from one of my laptops, but that’s a hassle if I can avoid it. So how do I get something from a phone or tablet onto a web server? The answer is mostly the same as any other device: SFTP. I figured there &lt;em&gt;had&lt;/em&gt; to be some SFTP clients for Android. After a bit of searching around I settled on one called &lt;a href=&quot;https://play.google.com/store/apps/details?id=turbo.client&quot;&gt;Turbo&lt;/a&gt;. It’s simple, lightweight, free, and adheres to Material Design guidelines. I really couldn’t ask for much else. After plugging in my server’s information and then providing a username and password, I was able to connect without any issues.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015/turbo_client.jpg&quot; alt=&quot;Turbo Client&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What’s really neat is that, along with the SFTP portion that allows me to easily download and upload files from my server, Turbo comes bundled with an editor application as well. This editor can be leveraged to actually open documents, pieces of code, etc. hosted on the server for quick edits as well. I doubt I’ll really need to use it for anything since I do all of my work in Markdown (and I &lt;strong&gt;really&lt;/strong&gt; don’t want to write a full, Markdown-laden post on my phone), but it could be handy in a pinch if I needed to update a .css file or something.&lt;/p&gt;
+
+&lt;p&gt;The other thing I found myself needing to contend with was handling the &lt;em&gt;size&lt;/em&gt; of my images. My phone has a 1080 x 1920 screen resolution, so naturally that’s the size of my screenshots. While by default Jekyll includes a nice &lt;code&gt;max-width: 100%&lt;/code&gt; definition for &lt;code&gt;img&lt;/code&gt; tags, I still don’t want screenshots which are &lt;em&gt;that&lt;/em&gt; massive. While Android’s &lt;strong&gt;Photos&lt;/strong&gt; app will allow for basic edits I didn’t see resizing among them. Luckily, I did some more searching and found a simple app called &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.iudesk.android.photo.editor&quot;&gt;Photo Editor&lt;/a&gt; in the Play Store. Sure enough, it has a very streamlined function for resizing photos, including some nice presets so that you can very quickly and easily opt to make a photo something like 640 pixels wide or any other “standard” size.&lt;/p&gt;
+
+&lt;p&gt;The two applications combined make it easier than ever for me to take a photo or screenshot from my phone, resize it, and then upload it to my web server. Then when I actually SSH in the &lt;em&gt;only&lt;/em&gt; thing I have to worry about is hammering out my content.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 30 Jun 2015 15:38:39 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/android/sftp/turbo/client/2015/06/30/turbo-client.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/android/sftp/turbo/client/2015/06/30/turbo-client.html</guid>
+        
+        
+        <category>android</category>
+        
+        <category>sftp</category>
+        
+        <category>turbo</category>
+        
+        <category>client</category>
+        
+      </item>
+    
+      <item>
+        <title>Free Google Play Music Radio</title>
+        <description>&lt;p&gt;I was pretty geeked last week when I saw that &lt;a href=&quot;http://www.droid-life.com/2015/06/23/google-play-music-gets-free-ad-supported-radio-streaming-in-us/&quot;&gt;Google Play Music was getting free, ad-supported radio&lt;/a&gt;. I’ve been a huge fan of Play Music back when it first launched as “Google Music”, and I’ve been a regular user ever since. Even before Google worked out deals with record lables so you could purchase music from them, it was a great repository for storing my music online so that I could stream it from any of my computers. Instead of having to keep tracks copied to the HDD for each machine I could just fire up a browser and stream my collection. Once you started being able to &lt;em&gt;buy&lt;/em&gt; music from Google, I even turned to them for purchasing the occasional track or album if it was a better deal than Amazon… or if I happened to have Play Store credits.&lt;/p&gt;
+
+&lt;p&gt;Google also offers up the Spotify-esque ability to stream &lt;em&gt;any&lt;/em&gt; track that you may want across their entire library. While I’ve leveraged that service before as well, I found that I didn’t use it enough to warrant the $10 USD each month that it was running me; streaming Netflix is cheaper than that. While for the most part I like streaming music from my personal collection, I occasionally want to listen to something random that I &lt;em&gt;don’t&lt;/em&gt; own. Until last week, this meant that I had to keep another music app on my phone like Pandora or Songza.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, now that’s no longer the case. Firing up the updated app from my phone shows me something very familiar:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015/play_radio.jpeg&quot; alt=&quot;Play Music Songza Interface&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’ve ever used Songza before then you probably feel like you have a bit of deja vu since the interface looks very similar to this, with the same tiles asking you to pick what activity or mood you happen to be experiencing at the moment so they can find music to match it. It seemed like this was only the natural progression considering it’s been about a year since &lt;a href=&quot;http://techcrunch.com/2014/07/01/google-buys-songza/&quot;&gt;Google bought Songza&lt;/a&gt;. I’m glad to see that the best pieces of Songza made it into Play Music while still being free to use for those who don’t want to pay for them.&lt;/p&gt;
+
+&lt;p&gt;One oddity that I have noticed is that, while all of the information claims these stations are ad-supported, I have yet to hear a single advertisement while streaming them for the past week. Both from the web interface on a computer and the Play Music app on my phone and tablet I’ve listened to &lt;strong&gt;hours&lt;/strong&gt; of music without a single advertisement… not that I’m complaining about it. :-)&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Jun 2015 10:07:14 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/google/play/music/radio/2015/06/29/play-music.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/google/play/music/radio/2015/06/29/play-music.html</guid>
+        
+        
+        <category>google</category>
+        
+        <category>play</category>
+        
+        <category>music</category>
+        
+        <category>radio</category>
+        
+      </item>
+    
+      <item>
+        <title>Blogging Options</title>
+        <description>&lt;p&gt;Lately I’ve been playing a &lt;em&gt;lot&lt;/em&gt; of blog roulette, hopping between different platforms and hosts in relatively rapid succession. I figured that I would do a write-up of my recent adventures into different blogging software and my thoughts on each of them.&lt;/p&gt;
+
+&lt;h2 id=&quot;hosted-wordpress&quot;&gt;Hosted WordPress&lt;/h2&gt;
+
+&lt;p&gt;My blog for forever and a day was my &lt;a href=&quot;https://failicide.wordpress.com/&quot;&gt;failicide&lt;/a&gt; hosted WordPress.com blog. My archive there goes back to spring of 2011, and my last legitimate post there was spring of 2015. Even as I write this it’s hard for me to believe that I was active there for almost exactly 4 years. Hosted WordPress is honestly a &lt;em&gt;great&lt;/em&gt; option for anyone looking to get into blogging. The setup couldn’t have been easier, you get tons of themes to choose from, plenty of storage space, and your blog seems to manage to get good exposure; even without regular updates that particular site still sees 100+ unique hits each day. Plus you get to use easily the most popular CMS on Earth without worry about patching it.&lt;/p&gt;
+
+&lt;p&gt;The downside for me was that I was a bit tired of there being ads on my blog posts and my limited control over my content (e.g. I couldn’t really do my own backups unless I wanted to export my blog on a semi-regular basis, which in itself wouldn’t include the media and is only easily importable into another WordPress instance.) I also wanted to start using my own domain, and I wasn’t exactly excited about the prospect of paying WordPress for that right. I definitely don’t blame Automattic for charging for that particular service, but it just wasn’t for me. My inner geek said that if I was going to head in this route I could do better.&lt;/p&gt;
+
+&lt;h2 id=&quot;blogger&quot;&gt;Blogger&lt;/h2&gt;
+
+&lt;p&gt;I tried out Blogger because it was essentially offering up the same stuff as WordPress without charging me for it. I’ll be honest that Blogger seems to be kind of the ostracized, outcast member of the Google family. Before switching to WordPress in early 2011, my blogging was mostly done at Blogger. Needless to say, I was a bit disappointed that over 4 years later pretty much everything is &lt;em&gt;exactly the same&lt;/em&gt;. While I don’t necessarily know if I’d be worried about Google killing Blogger off considering how many people use it (including Google, which hosts the blogs for most of their different products there), it’s still a bit disconcerting how little love it seems to get.&lt;/p&gt;
+
+&lt;p&gt;Overall, the UI for Blogger just doesn’t seem particularly strong; it’s like writing posts on WordPress 6 or 7 years ago. Image options are just kind of wonky, and it’s hard to get your post layout just the way you want in the WYSIWYG because spacing and CRLFs are just kind of odd. It wasn’t uncommon for me to publish posts and then immediately edit them to fix spacing issues.&lt;/p&gt;
+
+&lt;p&gt;Blogger’s themes are vastly more limited than those offered up by WordPress, though customizing them is easy. The problme is that customizing them seems to add a lot of overhead to the CSS. For example, I picked a nice-looking serif font for my posts and titles. When looking at my blog afterward, it would usually load with the default sans-serif font for a second or two first before the CSS for my custom font would load and actually kick in. It just seemed sloppy considering that I’ve leveraged &lt;a href=&quot;https://www.google.com/fonts&quot;&gt;Google Fonts&lt;/a&gt; before without any issues on load-times when done intelligently.&lt;/p&gt;
+
+&lt;p&gt;Similar to WordPress, backing up Blogger wasn’t the most streamlined thing. I could export it, but again I’m limited to what I can actually do with that export beyond re-importing it into another Blogger instance. I had attempted to import an export of my WordPress blog into Blogger, but that was met with horrible failure. With all of these hiccups in mind, I decided to move on.&lt;/p&gt;
+
+&lt;h2 id=&quot;raw-html-and-css&quot;&gt;Raw HTML and CSS&lt;/h2&gt;
+
+&lt;p&gt;For a brief time, I thought about doing my own site that I maintained just through raw HTML files. I was actually able to come up with some decent designs based on &lt;a href=&quot;http://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;. The good part is that I was in &lt;em&gt;complete&lt;/em&gt; control of my environment. It required almost no resources, and it was simple enough to gather up the contents of my site into a tarball to back it up. Additionally, since it was running on my shared hosting space I was able to spin up an SSL cert for it, though I couldn’t find a way to &lt;em&gt;force&lt;/em&gt; HTTPS.&lt;/p&gt;
+
+&lt;p&gt;Maintaining it was a beast, though, and it quickly became apparent that it wasn’t a viable solution. With no CMS, I was manually keeping a huge page of links; I could only imagine what that would look like a few years down the road. Additionally, each time I noticed a bug in my HTML or wanted to make a change to the layout beyond the CSS I needed to touch &lt;strong&gt;every… freaking… page&lt;/strong&gt;. While I was able to use some CLI-fu with &lt;code&gt;sed&lt;/code&gt; to avoid opening each of them in Vim, it still became unbearable pretty quickly. It was clear that a CMS was something I’d need.&lt;/p&gt;
+
+&lt;h2 id=&quot;ghost&quot;&gt;Ghost&lt;/h2&gt;
+
+&lt;p&gt;I had acquired a bit of hosting space from my registrar for the aforementioned HTML-based blog, so I decided that I’d try running my own blog software on it. I had seen &lt;a href=&quot;http://www.hanselman.com/blog/HowToInstallTheNodejsGhostBloggingSoftwareOnAzureWebsites.aspx&quot;&gt;Scott Hanselman&lt;/a&gt; blog about a Node.js blogging platform called &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. My shared hosting service actually had &lt;a href=&quot;http://www.softaculous.com/softaculous/&quot;&gt;Softaculous&lt;/a&gt; available, and Ghost was one of the packages it included. I quickly decided to give it a try. Unfortunately, I never got the automated installation to work. It kept erroring out, which was a bit frustrating since all I was doing was clicking an “Install” button.&lt;/p&gt;
+
+&lt;p&gt;I looked into the error logs generated, and after doing a bit of research it seemed that the errors were related to running out of resources during the installation. This wasn’t particularly surprising since I was getting essentially the lowest tier of service available from my host; I don’t anticipate my blogs to be &lt;em&gt;that&lt;/em&gt; popular. Installing Ghost and the necessary MySQL back-end seemed to be a bit overkill for my service. Rather than pay to upgrade my shared space, I decided to just move on.&lt;/p&gt;
+
+&lt;h2 id=&quot;nibbleblog&quot;&gt;Nibbleblog&lt;/h2&gt;
+
+&lt;p&gt;Also available in Softaculous was &lt;a href=&quot;http://www.nibbleblog.com/&quot;&gt;Nibbleblog&lt;/a&gt;. This drew my attention because it was based around storing data in XML files and pulling out the necessary pieces through PHP, thus eliminating the need for a DBMS back-end. It installed smoothly enough on my shared space, and I spent about a month using it. Softaculous allowed me to schedule a weekly backup compressing my whole blog into a tarball that I could then pull off via SFTP onto external storage. Again I could continue to leverage my previously mentioned SSL certificate, but I still couldn’t force HTTPS.&lt;/p&gt;
+
+&lt;p&gt;There weren’t really many customizations availabe for Nibbleblog without delving more into the code than I’d like for a CMS. You only could choose from a handful of themes, and none of them were responsive. This meant that my blog looked kind of gross when viewing on a phone or tablet which was a big caveat for me. I was able to install a few plugins for things like pretty URLs - my default it wanted to use a heinous-looking GUID - and add a page for an “About Me” type section but that was about it for my customization.&lt;/p&gt;
+
+&lt;p&gt;On the whole, I just didn’t feel particularly satisfied with Nibbleblog. While I had a bit more of the control than I got with solutions like hosted WordPress or Blogger, I was getting the same type of antiquated UI and feel. Plus when authoring posts from my Chromebooks I ran into some bugs in the WYSIWYG, such as any media being inserted into the very top of the post. Once again, I decided to move on.&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-on-shared-hosting&quot;&gt;Jekyll On Shared Hosting&lt;/h2&gt;
+
+&lt;p&gt;I had been interested in &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; for some time after learning that it was the means by which people were hosting blogs off of GitHub. I was really drawn to the fact that it allowed me to write posts in Markdown, which I love, and then parse those into static HTML pages. It gives you a pretty slick theme to begin with, but then you have the power to customize literally any aspect of it that you want. With the templating system it uses, it’s easy to change just one file and modify each page on your blog. Plus it’s extremely easy to just commit any blog changes to GitHub for a backup.&lt;/p&gt;
+
+&lt;p&gt;The downside for me was that my hosting service, being as basic as it was, didn’t afford me the opportunity to SSH in, install software, etc. Likewise, I didn’t want to just install Jekyll on one of my personal computers because that would eliminate my ability to blog from any of my laptops, netbooks, or Chromebooks, which is very important to me. To solve that problem I spun up a Debian VPS at &lt;a href=&quot;https://www.vultr.com/&quot;&gt;Vultr&lt;/a&gt; and installed Jekyll on that since I can SSH to it from anything. After authoring a post, I figured I would just FTP the site over to my shared hosting.&lt;/p&gt;
+
+&lt;p&gt;At first I didn’t think this would be a big deal since I could use some more CLI-fu to only copy over new files. The issue was that when running &lt;code&gt;jekyll build&lt;/code&gt; it seemed to touch &lt;em&gt;every&lt;/em&gt; file. So each time I posted, I was copying more and more data over to my shared hosting service. It just seemed clunky, and again I was worried about how much data, images, etc. I’d be copying over to that host after each post a few years down the road.&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-on-my-vps&quot;&gt;Jekyll On My VPS&lt;/h2&gt;
+
+&lt;p&gt;That’s when I opted to instead forget my shared hosting and host the site straight from my VPS. Vultr gives some pretty awesome service for just $5 USD a month, including 1 TB of bandwidth that I figured would be significantly more than I needed. As I had mentioned in &lt;a href=&quot;https://mads.ninja/nginx/server/ssl/https/2015/06/25/nginx-config.html&quot;&gt;another post&lt;/a&gt;, I opted to not use &lt;code&gt;jekyll serve&lt;/code&gt; to have Jekyll host itself. Instead I went with Nginx, and simply specified the folder where my Nginx site was hosted out of for Jekyll’s destination when running &lt;code&gt;jekyll build&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I really feel that this solution is giving me the best of everything. I get to write posts in Markdown out of Vim, the editor I feel the most efficient with by far. I completely control &lt;em&gt;everything&lt;/em&gt;, and I can customize my blog as much or as little as I want. Backups are insanely easy since I just push the changes to GitHub after each post. Should anything happen to my VPS, I could spin up another, clone my GitHub repository, and start publishing it again. I don’t have to worry about copying files anywhere since I’m just working off of the same server for everything. And since I completely control that server, I can leverage HTTPS and tell Nginx to redirect HTTP requests to HTTPS with a 301.&lt;/p&gt;
+
+&lt;p&gt;It took a lot of work, and I’m a bit sad that a few posts I made at each of the doomed blogging platforms are now lost to the ether of the Internet since I didn’t bother re-capturing all of that data each time I switched. In the end, though, I feel like it was well worth it to finally find a setup with which I’m very happy.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 27 Jun 2015 05:45:36 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/blogging/software/platforms/2015/06/27/blogging.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/blogging/software/platforms/2015/06/27/blogging.html</guid>
+        
+        
+        <category>blogging</category>
+        
+        <category>software</category>
+        
+        <category>platforms</category>
+        
+      </item>
+    
+      <item>
+        <title>PowerShell Reference Types And Value Types</title>
+        <description>&lt;p&gt;A coworker and I ran into something of an oddity yesterday that started the snowball rolling on some research digging into the guts of how PowerShell operates as a langauge. Let me say up front that, with as much as Microsoft is working to make PowerShell the de facto scripting language on Windows, it’s both surprising and frustrating how little is published in the way of official documentation. While there’s a lot of good stuff people are writing it’s always in blogs of Stack Overflow discussions. Microsoft doesn’t, at least at the time of this writing, have any official documentation like what I’d reference for &lt;a href=&quot;http://ruby-doc.org/core-2.2.1/&quot;&gt;Ruby&lt;/a&gt; or &lt;a href=&quot;http://perldoc.perl.org/perlapi.html&quot;&gt;Perl&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The behavior which kicked off our confusion was how PowerShell handles passing parameters to functions. Take this very simple example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function Test
+{
+    param($Value)
+    $Value *= 2
+}
+
+$number = 3
+Test -Value $number
+$number
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output of this is just 3. The reason is that when I pass &lt;strong&gt;$number&lt;/strong&gt; to the &lt;strong&gt;Test&lt;/strong&gt; function, it’s a &lt;em&gt;copy&lt;/em&gt; of the value. Thus &lt;strong&gt;$number&lt;/strong&gt; never changes. The behavior is different, however, when I pass an object. Take this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function Test
+{
+    param($Value)
+    $Value.Add(&quot;Hello!&quot;)
+}
+
+$something = New-Object System.Collections.ArrayList
+Test -Value $something
+$something
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The value printed to the screen here is “Hello!”. The difference is that &lt;strong&gt;$something&lt;/strong&gt; is being modified eventhough it’s being passed to the function. That clearly &lt;em&gt;doesn’t&lt;/em&gt; happen when passing a non-object. What gives?&lt;/p&gt;
+
+&lt;p&gt;After quite a bit of digging, I failed miserably at finding anything of substance about this topic as it relates to PowerShell. That being said, I was able to find some very &lt;em&gt;good&lt;/em&gt; information on the topic as it relates to C#, the language used to create PowerShell. In particular this &lt;a href=&quot;http://stackoverflow.com/questions/23041297/why-are-objects-automatically-passed-by-reference&quot;&gt;Stack Overflow&lt;/a&gt; thread and this &lt;a href=&quot;http://www.yoda.arachsys.com/csharp/parameters.html&quot;&gt;article&lt;/a&gt; really helped to clear things up for me.&lt;/p&gt;
+
+&lt;p&gt;If you want the super detailed explanation, read the content at those links. If you want the short version, however, read on. In C# there are two main sorts of variables: value types and reference types. For value type variables, the value of the variable is the data itself. In my first example, &lt;strong&gt;$number&lt;/strong&gt; is a value type, and that means the value of it is 3. Reference types are different. For anything which is a reference type, the value of the variable is a &lt;em&gt;reference&lt;/em&gt; to the data. So in my second example, &lt;strong&gt;$something&lt;/strong&gt; has a value which is simply a reference to where the ArrayList lives. That’s why passing &lt;strong&gt;$something&lt;/strong&gt; to a function changes what &lt;strong&gt;$something&lt;/strong&gt; actually contains; it’s a reference that is being passed and the original data is being changed!&lt;/p&gt;
+
+&lt;p&gt;To simplify this a bit I can take functions out of the equation entirely. Consider the following example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$first = New-Object System.Collections.ArrayList
+$second = $first
+$second.Add(&quot;Hello!&quot;)
+$first
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output of this is “Hello!”. When I set &lt;strong&gt;$second&lt;/strong&gt; equal to &lt;strong&gt;$first&lt;/strong&gt;, I’m setting &lt;strong&gt;$second&lt;/strong&gt; equal to the reference to where the data of &lt;strong&gt;$first&lt;/strong&gt; lives. Since &lt;strong&gt;$first&lt;/strong&gt; and &lt;strong&gt;$second&lt;/strong&gt; both reference the &lt;em&gt;same thing&lt;/em&gt;, adding new data to &lt;strong&gt;$second&lt;/strong&gt; means that &lt;strong&gt;$first&lt;/strong&gt; is now different as well!&lt;/p&gt;
+
+&lt;p&gt;After realizing that this is how C# functions, it makes &lt;em&gt;much&lt;/em&gt; more sense why PowerShell behaves the way it does. As a further test, I wanted to see if I could emulate the same behavior in PowerShell by using the &lt;code&gt;ref&lt;/code&gt; keyword that C# leverages to pass primitives as references. Sure enough, that’s possible as well:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function Test
+{
+    param([ref]$Value)
+    $Value.Value *= 2
+}
+
+$number = 3
+Test -Value ([ref]$number)
+$number
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Executing this gives me a value of 6. By using the &lt;code&gt;ref&lt;/code&gt; keyword, I’m able to pass a reference to the function just like I would in C#. Thus the actual data stored by what &lt;strong&gt;$number&lt;/strong&gt; references is now changed. Note that when performing the operation inside of my function, however, I can’t just do that against &lt;strong&gt;$Value&lt;/strong&gt;. The reason for this is that &lt;strong&gt;$Value&lt;/strong&gt; is &lt;em&gt;only a reference&lt;/em&gt;. If I want to do something against its data, I need to act on it’s &lt;strong&gt;Value&lt;/strong&gt; property.&lt;/p&gt;
+
+&lt;p&gt;Hopefully someone else stumbles across this post and is saved from having to spend a bit of time hunting for an explanation if they notice the same behavior in PowerShell that we did.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 26 Jun 2015 11:29:00 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/powershell/reference/value/type/2015/06/26/powershell-references.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/powershell/reference/value/type/2015/06/26/powershell-references.html</guid>
+        
+        
+        <category>powershell</category>
+        
+        <category>reference</category>
+        
+        <category>value</category>
+        
+        <category>type</category>
+        
+      </item>
+    
+      <item>
+        <title>Configure Nginx To Force SSL</title>
+        <description>&lt;p&gt;When I set up this blog one of the things I had to consider was how I wanted to serve it up. I could have easily used the &lt;code&gt;jekyll serve&lt;/code&gt; command to have Jekyll host itself. I didn’t really like that idea, though; I wanted to have a dedicated web server back-end running the static HTML pages that Jekyll parsed together for me. I opted to go with &lt;a href=&quot;http://nginx.org/&quot;&gt;Nginx&lt;/a&gt; over Apache just because it seems to be the new hotness; I figured that keeping myself up to speed on the latest and greatest (even if it’s the latest and greatest in an area where I don’t normally work, as is the case here) would be good for me.&lt;/p&gt;
+
+&lt;p&gt;Getting Nginx up and running was easy enough; there are plenty of good tutorials online. My next step was to leverage an SSL certificate so that I could deliver content over HTTPS. This was slightly less clear to me. I basically went underneath my existing config under &lt;strong&gt;/etc/nginx/sites-available&lt;/strong&gt; and just started adding stuff to it inside of my existing &lt;strong&gt;server&lt;/strong&gt; setup. It worked, but unbeknownst to me was far from ideal. I realized my mistake later on, as we’ll see in a moment.&lt;/p&gt;
+
+&lt;p&gt;My next step was to set up a redirect because I didn’t actually &lt;em&gt;want&lt;/em&gt; anyone using HTTP with the site. If HTTPS is available, why allow for HTTP? I would imagine that HTTP traffic would become common from people not specifying the protocol when typing the URL into the address bar or for hyperlinks. When researching this, I realized that I should have my port 80 setup and my port 443 setup under &lt;em&gt;separate&lt;/em&gt; &lt;strong&gt;server&lt;/strong&gt; definitions within the same configuration file under &lt;strong&gt;sites-available&lt;/strong&gt;. It looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server {
+    listen 80 default_server;
+    listen [::]80 default_server;
+    server_name url.here;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    ssl on;
+    ssl_certificate /path/to/public/cert;
+    ssl_certificate_key /path/to/private/key;
+
+    root /path/to/site;
+
+    index index.html index.htm;
+
+    server_name url.here;
+}    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So as you can see here, I actually have two different &lt;strong&gt;server&lt;/strong&gt; definitions. The first handles port 80 traffic while the second handles port 443 traffic, both operating for the same site. The key I was able to &lt;a href=&quot;http://serverfault.com/questions/67316/in-nginx-how-can-i-rewrite-all-http-requests-to-https-while-maintaining-sub-dom&quot;&gt;find eventually&lt;/a&gt; is the &lt;code&gt;return 301 https://$server_name$request_uri;&lt;/code&gt; line. This tells Nginx that any time it receives a request on port 80 to redirect that request to 443. After this, I just had to restart the service:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally I was able to confirm that even when nagivating directly to &lt;a href=&quot;http://mads.ninja&quot;&gt;http://mads.ninja&lt;/a&gt; I would get redirected to the HTTPS version like I’d expect. Awesome!&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 25 Jun 2015 10:12:00 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/nginx/server/ssl/https/2015/06/25/nginx-config.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/nginx/server/ssl/https/2015/06/25/nginx-config.html</guid>
+        
+        
+        <category>nginx</category>
+        
+        <category>server</category>
+        
+        <category>ssl</category>
+        
+        <category>https</category>
+        
+      </item>
+    
+      <item>
+        <title>Error Installing Jekyll Gem: Can&#39;t Find Header Files</title>
+        <description>&lt;p&gt;As you may be able to tell at a quick glance, I &lt;em&gt;just&lt;/em&gt; configured this blog that I have running on a VPS I spun up bright and early this morning. One of the things I wanted to do was get nginx rolling on it and then install Jekyll to do a bit of blogging. While the nginx setup went incredibly smoothly, I started to run into a couple of hiccups when installing the Jekyll gem. Note that I’m doing this from a Debian 8 VM.&lt;/p&gt;
+
+&lt;p&gt;After installing Ruby, since Debian doesn’t have it by default, I ran the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It caught me off guard that this threw an error:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;john@mads:~$ sudo gem install jekyll
+Building native extensions.  This could take a while…
+ERROR:  Error installing jekyll:
+        ERROR: Failed to build gem native extension.&lt;/p&gt;
+
+  &lt;pre&gt;&lt;code&gt;/usr/bin/ruby2.1 extconf.rb mkmf.rb can&#39;t find header files for ruby at /usr/lib/ruby/include/ruby.h
+&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;p&gt;extconf failed, exit code 1&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Yeah, that’s not what I wanted. I did some searches for this error and most of them were from folks using OS X where the problem was that Ruby couldn’t find &lt;strong&gt;make&lt;/strong&gt;. Since I actually didn’t have &lt;strong&gt;make&lt;/strong&gt; installed, either, I went ahead and put the full software compilation package on my VPS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install build-essential
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After that I did have &lt;strong&gt;make&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;which make
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sadly, trying to install Jekyll still gave me the same error. I continued digging through various help forums and StackOverflow posts before finally stumbling across one that said you need the Ruby developer tools to install Jekyll. I threw that package on my VPS next:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ruby-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sure enough, after that installing Jekyll completed without any issues. So if you’re trying to get Jekyll up and running on Debian (or presumably one of its derivatives like Ubuntu or Mint) but you’re seeing the error above, make sure you’ve got the Ruby developer tools installed first.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 24 Jun 2015 07:35:00 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/jekyll/ruby/gem/install/2015/06/24/ruby-error.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/jekyll/ruby/gem/install/2015/06/24/ruby-error.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>ruby</category>
+        
+        <category>gem</category>
+        
+        <category>install</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 24 Jun 2015 06:38:49 -0400</pubDate>
+        <link>https://johnfabry.azurewebsites.net/jekyll/update/2015/06/24/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">https://johnfabry.azurewebsites.net/jekyll/update/2015/06/24/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

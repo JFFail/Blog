@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Blogging Options</title>
+  <meta name="description" content="Lately I’ve been playing a lot of blog roulette, hopping between different platforms and hosts in relatively rapid succession. I figured that I would do a wr...">
+
+  <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://johnfabry.azurewebsites.net/blogging/software/platforms/2015/06/27/blogging.html">
+  <link rel="alternate" type="application/rss+xml" title="John Fabry" href="https://johnfabry.azurewebsites.net/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">John Fabry</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Blogging Options</h1>
+    <p class="post-meta">Jun 27, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>Lately I’ve been playing a <em>lot</em> of blog roulette, hopping between different platforms and hosts in relatively rapid succession. I figured that I would do a write-up of my recent adventures into different blogging software and my thoughts on each of them.</p>
+
+<h2 id="hosted-wordpress">Hosted WordPress</h2>
+
+<p>My blog for forever and a day was my <a href="https://failicide.wordpress.com/">failicide</a> hosted WordPress.com blog. My archive there goes back to spring of 2011, and my last legitimate post there was spring of 2015. Even as I write this it’s hard for me to believe that I was active there for almost exactly 4 years. Hosted WordPress is honestly a <em>great</em> option for anyone looking to get into blogging. The setup couldn’t have been easier, you get tons of themes to choose from, plenty of storage space, and your blog seems to manage to get good exposure; even without regular updates that particular site still sees 100+ unique hits each day. Plus you get to use easily the most popular CMS on Earth without worry about patching it.</p>
+
+<p>The downside for me was that I was a bit tired of there being ads on my blog posts and my limited control over my content (e.g. I couldn’t really do my own backups unless I wanted to export my blog on a semi-regular basis, which in itself wouldn’t include the media and is only easily importable into another WordPress instance.) I also wanted to start using my own domain, and I wasn’t exactly excited about the prospect of paying WordPress for that right. I definitely don’t blame Automattic for charging for that particular service, but it just wasn’t for me. My inner geek said that if I was going to head in this route I could do better.</p>
+
+<h2 id="blogger">Blogger</h2>
+
+<p>I tried out Blogger because it was essentially offering up the same stuff as WordPress without charging me for it. I’ll be honest that Blogger seems to be kind of the ostracized, outcast member of the Google family. Before switching to WordPress in early 2011, my blogging was mostly done at Blogger. Needless to say, I was a bit disappointed that over 4 years later pretty much everything is <em>exactly the same</em>. While I don’t necessarily know if I’d be worried about Google killing Blogger off considering how many people use it (including Google, which hosts the blogs for most of their different products there), it’s still a bit disconcerting how little love it seems to get.</p>
+
+<p>Overall, the UI for Blogger just doesn’t seem particularly strong; it’s like writing posts on WordPress 6 or 7 years ago. Image options are just kind of wonky, and it’s hard to get your post layout just the way you want in the WYSIWYG because spacing and CRLFs are just kind of odd. It wasn’t uncommon for me to publish posts and then immediately edit them to fix spacing issues.</p>
+
+<p>Blogger’s themes are vastly more limited than those offered up by WordPress, though customizing them is easy. The problme is that customizing them seems to add a lot of overhead to the CSS. For example, I picked a nice-looking serif font for my posts and titles. When looking at my blog afterward, it would usually load with the default sans-serif font for a second or two first before the CSS for my custom font would load and actually kick in. It just seemed sloppy considering that I’ve leveraged <a href="https://www.google.com/fonts">Google Fonts</a> before without any issues on load-times when done intelligently.</p>
+
+<p>Similar to WordPress, backing up Blogger wasn’t the most streamlined thing. I could export it, but again I’m limited to what I can actually do with that export beyond re-importing it into another Blogger instance. I had attempted to import an export of my WordPress blog into Blogger, but that was met with horrible failure. With all of these hiccups in mind, I decided to move on.</p>
+
+<h2 id="raw-html-and-css">Raw HTML and CSS</h2>
+
+<p>For a brief time, I thought about doing my own site that I maintained just through raw HTML files. I was actually able to come up with some decent designs based on <a href="http://getbootstrap.com/">Bootstrap</a>. The good part is that I was in <em>complete</em> control of my environment. It required almost no resources, and it was simple enough to gather up the contents of my site into a tarball to back it up. Additionally, since it was running on my shared hosting space I was able to spin up an SSL cert for it, though I couldn’t find a way to <em>force</em> HTTPS.</p>
+
+<p>Maintaining it was a beast, though, and it quickly became apparent that it wasn’t a viable solution. With no CMS, I was manually keeping a huge page of links; I could only imagine what that would look like a few years down the road. Additionally, each time I noticed a bug in my HTML or wanted to make a change to the layout beyond the CSS I needed to touch <strong>every… freaking… page</strong>. While I was able to use some CLI-fu with <code>sed</code> to avoid opening each of them in Vim, it still became unbearable pretty quickly. It was clear that a CMS was something I’d need.</p>
+
+<h2 id="ghost">Ghost</h2>
+
+<p>I had acquired a bit of hosting space from my registrar for the aforementioned HTML-based blog, so I decided that I’d try running my own blog software on it. I had seen <a href="http://www.hanselman.com/blog/HowToInstallTheNodejsGhostBloggingSoftwareOnAzureWebsites.aspx">Scott Hanselman</a> blog about a Node.js blogging platform called <a href="https://ghost.org/">Ghost</a>. My shared hosting service actually had <a href="http://www.softaculous.com/softaculous/">Softaculous</a> available, and Ghost was one of the packages it included. I quickly decided to give it a try. Unfortunately, I never got the automated installation to work. It kept erroring out, which was a bit frustrating since all I was doing was clicking an “Install” button.</p>
+
+<p>I looked into the error logs generated, and after doing a bit of research it seemed that the errors were related to running out of resources during the installation. This wasn’t particularly surprising since I was getting essentially the lowest tier of service available from my host; I don’t anticipate my blogs to be <em>that</em> popular. Installing Ghost and the necessary MySQL back-end seemed to be a bit overkill for my service. Rather than pay to upgrade my shared space, I decided to just move on.</p>
+
+<h2 id="nibbleblog">Nibbleblog</h2>
+
+<p>Also available in Softaculous was <a href="http://www.nibbleblog.com/">Nibbleblog</a>. This drew my attention because it was based around storing data in XML files and pulling out the necessary pieces through PHP, thus eliminating the need for a DBMS back-end. It installed smoothly enough on my shared space, and I spent about a month using it. Softaculous allowed me to schedule a weekly backup compressing my whole blog into a tarball that I could then pull off via SFTP onto external storage. Again I could continue to leverage my previously mentioned SSL certificate, but I still couldn’t force HTTPS.</p>
+
+<p>There weren’t really many customizations availabe for Nibbleblog without delving more into the code than I’d like for a CMS. You only could choose from a handful of themes, and none of them were responsive. This meant that my blog looked kind of gross when viewing on a phone or tablet which was a big caveat for me. I was able to install a few plugins for things like pretty URLs - my default it wanted to use a heinous-looking GUID - and add a page for an “About Me” type section but that was about it for my customization.</p>
+
+<p>On the whole, I just didn’t feel particularly satisfied with Nibbleblog. While I had a bit more of the control than I got with solutions like hosted WordPress or Blogger, I was getting the same type of antiquated UI and feel. Plus when authoring posts from my Chromebooks I ran into some bugs in the WYSIWYG, such as any media being inserted into the very top of the post. Once again, I decided to move on.</p>
+
+<h2 id="jekyll-on-shared-hosting">Jekyll On Shared Hosting</h2>
+
+<p>I had been interested in <a href="http://jekyllrb.com/">Jekyll</a> for some time after learning that it was the means by which people were hosting blogs off of GitHub. I was really drawn to the fact that it allowed me to write posts in Markdown, which I love, and then parse those into static HTML pages. It gives you a pretty slick theme to begin with, but then you have the power to customize literally any aspect of it that you want. With the templating system it uses, it’s easy to change just one file and modify each page on your blog. Plus it’s extremely easy to just commit any blog changes to GitHub for a backup.</p>
+
+<p>The downside for me was that my hosting service, being as basic as it was, didn’t afford me the opportunity to SSH in, install software, etc. Likewise, I didn’t want to just install Jekyll on one of my personal computers because that would eliminate my ability to blog from any of my laptops, netbooks, or Chromebooks, which is very important to me. To solve that problem I spun up a Debian VPS at <a href="https://www.vultr.com/">Vultr</a> and installed Jekyll on that since I can SSH to it from anything. After authoring a post, I figured I would just FTP the site over to my shared hosting.</p>
+
+<p>At first I didn’t think this would be a big deal since I could use some more CLI-fu to only copy over new files. The issue was that when running <code>jekyll build</code> it seemed to touch <em>every</em> file. So each time I posted, I was copying more and more data over to my shared hosting service. It just seemed clunky, and again I was worried about how much data, images, etc. I’d be copying over to that host after each post a few years down the road.</p>
+
+<h2 id="jekyll-on-my-vps">Jekyll On My VPS</h2>
+
+<p>That’s when I opted to instead forget my shared hosting and host the site straight from my VPS. Vultr gives some pretty awesome service for just $5 USD a month, including 1 TB of bandwidth that I figured would be significantly more than I needed. As I had mentioned in <a href="https://mads.ninja/nginx/server/ssl/https/2015/06/25/nginx-config.html">another post</a>, I opted to not use <code>jekyll serve</code> to have Jekyll host itself. Instead I went with Nginx, and simply specified the folder where my Nginx site was hosted out of for Jekyll’s destination when running <code>jekyll build</code>.</p>
+
+<p>I really feel that this solution is giving me the best of everything. I get to write posts in Markdown out of Vim, the editor I feel the most efficient with by far. I completely control <em>everything</em>, and I can customize my blog as much or as little as I want. Backups are insanely easy since I just push the changes to GitHub after each post. Should anything happen to my VPS, I could spin up another, clone my GitHub repository, and start publishing it again. I don’t have to worry about copying files anywhere since I’m just working off of the same server for everything. And since I completely control that server, I can leverage HTTPS and tell Nginx to redirect HTTP requests to HTTPS with a 301.</p>
+
+<p>It took a lot of work, and I’m a bit sad that a few posts I made at each of the doomed blogging platforms are now lost to the ether of the Internet since I didn’t bother re-capturing all of that data each time I switched. In the end, though, I feel like it was well worth it to finally find a setup with which I’m very happy.</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">John Fabry</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Contact</li>
+          <li><script>document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'&'+'#'+'1'+'0'+'9'+';'+'a'+'i'+'l'+'t'+'&'+'#'+'1'+'1'+'1'+';'+
+'&'+'#'+'5'+'8'+';'+'%'+'&'+'#'+'5'+'4'+';'+'&'+'#'+'6'+'5'+';'+'&'+'#'+'1'+'1'+'1'+';'+'h'+'n'+'%'+
+'4'+'0'+'&'+'#'+'1'+'0'+'9'+';'+'a'+'&'+'#'+'1'+'0'+'0'+';'+'s'+'%'+'2'+'&'+'#'+'6'+'9'+';'+'n'+'i'+
+'n'+'j'+'&'+'#'+'9'+'7'+';'+"'"+'>'+'&'+'#'+'1'+'0'+'6'+';'+'o'+'h'+'n'+'&'+'#'+'6'+'4'+';'+'m'+'a'+
+'d'+'&'+'#'+'1'+'1'+'5'+';'+'&'+'#'+'4'+'6'+';'+'n'+'i'+'n'+'j'+'a'+'<'+'/'+'a'+'>');</script><noscript>[Turn on JavaScript to see the email address]</noscript></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/JFFail">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">JFFail</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/ConsoleAccess">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">ConsoleAccess</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Random musings and ramblings of a geek and sysadmin.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
